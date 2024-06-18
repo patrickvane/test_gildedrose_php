@@ -7,6 +7,7 @@ namespace GildedRose;
 use GildedRose\ItemUpdater\ItemUpdater;
 use GildedRose\ItemUpdater\ItemUpdaterAgedBrie;
 use GildedRose\ItemUpdater\ItemUpdaterBackstagePass;
+use GildedRose\ItemUpdater\ItemUpdaterConjured;
 use GildedRose\ItemUpdater\ItemUpdaterStandard;
 use GildedRose\ItemUpdater\ItemUpdaterSulfuras;
 
@@ -44,6 +45,10 @@ final class GildedRose
 		if(\str_starts_with($item->name, 'Backstage pass'))
 		{
 			return new ItemUpdaterBackstagePass($item);
+		}
+		if(\str_starts_with($item->name, 'Conjured'))
+		{
+			return new ItemUpdaterConjured($item);
 		}
 		return new ItemUpdaterStandard($item);
 	}
