@@ -15,7 +15,6 @@ class ItemUpdaterStandard extends ItemUpdater
 
         $this->item->sellIn--;
 
-
         // limits
         $this->item->quality = \max(0, \min(50, $this->item->quality));
     }
